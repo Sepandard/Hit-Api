@@ -1,43 +1,44 @@
-\# Express Server with Docker Compose
+# Express Server with Docker Compose
 
 This project sets up an Express.js server with Docker Compose for easy deployment and management of PostgreSQL, pgAdmin, and InfluxDB containers.
 
-\## Table of Contents
+## Table of Contents
 
-1. \[Installation\]\(\#installation\)
-2. \[Usage\]\(\#usage\)
-3. \[Configuration\]\(\#configuration\)
-4. \[Docker Setup\]\(\#docker-setup\)
-5. \[License\]\(\#license\)
+1. [Installation](#installation)
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Configuration](#configuration)
+4. [Docker Stup](#docker-setup)
+5. [License](#license)
 
-\## Installation
+## Installation
 
 To install project dependencies, run:
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
-\## Usage
+## Usage
 
 To start the server, run:
 
-\`\`\`bash
+```bash
 npm start
-\`\`\`
+```
 
 
 To start developer mode the server, run:
 
-\`\`\`bash
+```bash
 npm run start:watch
-\`\`\`
+```
 
-\## Configuration
+## Configuration
 
-Ensure you have a \`.env\` file in the \`config\`, you have sample of this file:
+Ensure you have a `.env` file in the `config`, you have sample of this file:
 
-\`\`\`plaintext
+```plaintext
 NODE_ENV=
 PORT=
 FRONTEND_APP_HOST=
@@ -54,18 +55,18 @@ INFLUX_URL=
 INFLUX_TOKEN=
 INFLUX_ORG=
 INFLUX_BUCKET=
-\`\`\`
+```
 
-\## Docker Setup
+## Docker Setup
 
-To set up the project with Docker, ensure you have Docker installed on your machine. Then, run the following command`:
+To set up the project with Docker, ensure you have Docker installed on your machine. Then, run the following command:
 
-\`\`\`bash
+```bash
 docker-compose up -d
-\`\`\`
+```
 
 This will spin up PostgreSQL, pgAdmin, and InfluxDB containers with the required configurations.
 
-\## License
+## License
 
-This project is licensed under the \[MIT License\]\(LICENSE\).
+This project is licensed under the [MIT License](LICENSE).
