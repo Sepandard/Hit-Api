@@ -58,7 +58,7 @@ INFLUX_BUCKET=
 
 \## Docker Setup
 
-To set up the project with Docker, ensure you have Docker installed on your machine. Then, run the following command in \`./platform/\`:
+To set up the project with Docker, ensure you have Docker installed on your machine. Then, run the following command`:
 
 \`\`\`bash
 docker-compose up -d
