@@ -1,6 +1,7 @@
-# Express Server with Docker Compose
+# Hit API
 
 This project sets up an Express.js server with Docker Compose for easy deployment and management of PostgreSQL, pgAdmin, and InfluxDB containers.
+Hit API is a logger of mouse movement and click
 
 ## Table of Contents
 
