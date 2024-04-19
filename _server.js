@@ -38,7 +38,7 @@ const expressWs = require('express-ws')(app);
 initModules(app);
 
 // Serve Swagger documentation
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Handle 404 error
 app.use('*', (req, res, next) => {

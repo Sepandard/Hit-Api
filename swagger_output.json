@@ -11,20 +11,36 @@
     "http"
   ],
   "paths": {
-    "/api/icon/{iconName}": {
+    "/api/hit/type": {
       "get": {
         "description": "",
         "parameters": [
           {
-            "name": "iconName",
-            "in": "path",
-            "required": true,
+            "name": "page",
+            "in": "query",
             "type": "string"
           }
         ],
         "responses": {
-          "404": {
-            "description": "Not Found"
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/hit": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
