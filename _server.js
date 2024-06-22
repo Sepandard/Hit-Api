@@ -6,12 +6,13 @@ const path = require('path');
 const colors = require('colors');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger_output.json');
-const ResponseMessage = require('./contract/responseMessage');
+const ResponseMessage = require('./contract/responseMessages');
 
 // Initialize express app
 const app = express();
 dotenv.config({ path: './config/config.env' });
 const initModules = require('./_initModule');
+require('./config/postgres');
 
 
 // Middleware

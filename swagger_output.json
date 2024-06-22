@@ -28,6 +28,16 @@
         }
       }
     },
+    "/api/hit/range": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/hit": {
       "get": {
         "description": "",
