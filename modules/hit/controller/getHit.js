@@ -17,12 +17,36 @@ exports.getHitByType = (app) => {
                 |> range(start: -30d, stop: -1m)
                 |> filter(fn: (r) => r["_measurement"] == "hit_click")
                 |> filter(fn: (r) => r["_field"] == "model")
-                |> filter(fn: (r) => r.page_url == "${page}")
+                |> filter(fn: (r) => r.page_url == "/home")
             `;
             
             const data = await fetchData(queryApi, fluxQuery);
             const formattedData =  formatGetDataByType(data);
             res.status(200).json(formattedData);
+        } catch (error) {
+            next(error); 
+        }
+    });
+};
+
+exports.getHitRangeNumber = (app) => {
+    app.get('/api/hit/range', async (req, res, next) => {
+
+        try {
+            const queryApi = influxDB.getQueryApi(process.env.INFLUX_ORG);
+            const fluxQuery = `
+            from(bucket: "hitBucket")
+                |> range(start: -100d, stop: -1m)
+                |> filter(fn: (r) => r._measurement == "hit_click" and r._field == "model")
+                |> filter(fn: (r) => r.page_url == "/home")
+                |> map(fn: (r) => ({ r with modelData: string(v: r._value) }))
+                |> aggregateWindow(every: 15m, fn: count, createEmpty: false)
+                |> yield(name: "count")
+            `;
+            
+            const data = await fetchData(queryApi, fluxQuery);
+            // const formattedData =  formatGetDataByType(data);
+            res.status(200).json(data);
         } catch (error) {
             next(error); 
         }
@@ -103,3 +127,7 @@ function formatGetAllData(data) {
         return acc;
     }, { click: [], movement: [] });
 }
+
+
+
+
