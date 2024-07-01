@@ -1,4 +1,5 @@
 const client = require('../../../config/postgres.js');
+const ResponseMessages = require('../../../contract/responseMessages.js');
 
 exports.postFeedback = (app) => {
 
@@ -7,8 +8,13 @@ exports.postFeedback = (app) => {
     if(req.headers.authorization){
     const token = req.headers.authorization?.split(' ')[1];
     userId = jwt.decode(token).id;
-}
+    }
     const { feeling, message } = req.body;
+
+    if(feeling < 0 || feeling > 5 ) { 
+      res.status(400).json();
+      return;
+    }
 
     await client.query(
         `
