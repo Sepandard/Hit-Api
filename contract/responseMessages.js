@@ -229,7 +229,7 @@ ResponseMessages.NOT_AUTHORIZED = 'Not authorized';
 ResponseMessages.UNAUTHORIZED_ACCESS = 'Unauthorized access';
 ResponseMessages.UNAUTHORIZED_ACCESS_MESSAGE = 'You are not authorized to access this resource';
 
-ResponseMessages.UNKNOW_ERROR = 'Unknown error';
+ResponseMessages.UNKNOWN_ERROR = 'Unknown error';
 ResponseMessages.ALREADY_REQUESTED = 'Already requested';
 
 ResponseMessages.GITHUB_API_ERROR = 'Github API error';
