@@ -27,7 +27,7 @@ exports.insertHit = (app) => {
 
             influxWrite.writePoints([point]);
             influxWrite.close().then(() => {
-                console.log('write successfully finished in point ', { x, y, value });
+                console.log('write successfully finished in point ', { x, y, value ,isDesktop});
             });
         });
         console.log('WebSocket connection established');
